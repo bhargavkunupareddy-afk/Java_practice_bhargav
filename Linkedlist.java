@@ -70,16 +70,31 @@ public class LinkedlistDemo {
 			current = current.next;
 		}
 	}
+  	static void reverse() {
+   System.out.println("");
+ 
+    Node prev = null;
+    Node current = head;
+  
+    while (current != null) {
+       Node next = current.next;   // save next node
+        current.next = prev;   // reverse link
+        prev = current;        // move prev forward
+        current = next;        // move current forward
+    }
+
+    head = prev; // new head
+}
 	
 	public static void main(String[] args) {
 		
        add(34);
        add(45);
-       add(89);
-       
-       display();
-       
+       add(89);       
+       display();        
        remove();
+       display();
+       reverse();
        display();
        
 	}
